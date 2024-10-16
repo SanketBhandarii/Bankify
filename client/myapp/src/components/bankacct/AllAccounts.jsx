@@ -13,7 +13,7 @@ const AllAccounts = () => {
     const fetchAccounts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/acct/admin/accounts",
+          " https://bankify-ztoj.onrender.com/acct/admin/accounts",
           {
             withCredentials: true,
           }

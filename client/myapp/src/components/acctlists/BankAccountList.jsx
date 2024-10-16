@@ -18,7 +18,7 @@ const BankAccountsList = () => {
   useEffect(() => {
     const fetchBankAccounts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/acct/bank", {
+        const response = await axios.get(" https://bankify-ztoj.onrender.com/acct/bank", {
           withCredentials: true,
         });
         setBankAccounts(response.data);
@@ -47,7 +47,7 @@ const BankAccountsList = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/acct/bank/${accountId}`,
+        ` https://bankify-ztoj.onrender.com/acct/bank/${accountId}`,
         editingDetails,
         {
           withCredentials: true,
@@ -72,7 +72,7 @@ const BankAccountsList = () => {
   const handleDeleteClick = async (accountId) => {
     if (window.confirm("Are you sure you want to delete this account?")) {
       try {
-        await axios.delete(`http://localhost:8000/acct/bank/${accountId}`, {
+        await axios.delete(` https://bankify-ztoj.onrender.com/acct/bank/${accountId}`, {
           withCredentials: true,
         });
 

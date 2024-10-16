@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/home", {
+        const response = await axios.get(" https://bankify-ztoj.onrender.com/api/home", {
           withCredentials: true,
         });
 

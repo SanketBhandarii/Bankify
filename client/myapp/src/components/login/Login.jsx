@@ -24,7 +24,7 @@ const Login = () => {
       setEmail("");
       setPassword("");
       const response = await axios.post(
-        "http://localhost:8000/api/login",
+        " https://bankify-ztoj.onrender.com/api/login",
         {
           email,
           password,

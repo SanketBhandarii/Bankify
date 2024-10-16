@@ -25,7 +25,7 @@ const Signup = () => {
       setUsername("");
       setPassword("");
       setEmail("");
-      const response = await axios.post("http://localhost:8000/api/signup", {
+      const response = await axios.post(" https://bankify-ztoj.onrender.com/api/signup", {
         username,
         email,
         password,

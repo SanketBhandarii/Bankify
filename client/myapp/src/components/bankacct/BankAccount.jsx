@@ -1,11 +1,11 @@
 // src/components/AddBankAccount.js
 import React, { useState } from "react";
-import axios from "axios"; // Import axios to handle API requests
+import axios from "axios";
 import "./BankAccount.css";
 
 const AddBankAccount = () => {
-  const [branchName, setBranchName] = useState(""); // State for account name
-  const [accountHolderName, setAccountHolderName] = useState(""); // State for account holder's name
+  const [branchName, setBranchName] = useState("");
+  const [accountHolderName, setAccountHolderName] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
   const [bankName, setBankName] = useState("");
   const [ifscCode, setIfscCode] = useState("");
@@ -17,7 +17,6 @@ const AddBankAccount = () => {
     setError("");
     setSuccess("");
 
-    // Check for empty fields
     if (
       !branchName ||
       !accountHolderName ||
@@ -29,12 +28,16 @@ const AddBankAccount = () => {
       return;
     }
 
+    if (accountNumber < 0) {
+      setError("Account number cannot be negative");
+      return;
+    }
+
     try {
-      // Send the data to the backend API
       await axios.post(
-        "http://localhost:8000/acct/bank",
+        "https://bankify-ztoj.onrender.com/acct/bank",
         {
-          branchName, // Correctly send branchName
+          branchName,
           accountHolderName,
           accountNumber,
           bankName,
@@ -46,14 +49,13 @@ const AddBankAccount = () => {
       );
 
       setSuccess("Bank account details submitted successfully!");
-      // Reset form fields
       setBranchName("");
       setAccountHolderName("");
       setAccountNumber("");
       setBankName("");
       setIfscCode("");
     } catch (err) {
-      console.error(err.response?.data); // Log error response
+      console.error(err.response?.data);
       setError("Failed to submit bank account details. Please try again.");
     }
   };
@@ -67,18 +69,18 @@ const AddBankAccount = () => {
             <input
               type="text"
               name="accountName"
-              placeholder="Branch Name" // Placeholder for the account name
-              value={branchName} // Value of the account name input
-              onChange={(e) => setBranchName(e.target.value)} // Update state on change
-              required // Ensure this field is required
+              placeholder="Branch Name"
+              value={branchName}
+              onChange={(e) => setBranchName(e.target.value)}
+              required
             />
             <input
               type="text"
               name="accountHolderName"
-              placeholder="Account Holder Name" // Placeholder for the account holder's name
-              value={accountHolderName} // Value of the account holder's name input
-              onChange={(e) => setAccountHolderName(e.target.value)} // Update state on change
-              required // Ensure this field is required
+              placeholder="Account Holder Name"
+              value={accountHolderName}
+              onChange={(e) => setAccountHolderName(e.target.value)}
+              required
             />
             <input
               type="number"

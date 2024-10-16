@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/logout", { withCredentials: true });
+      const response = await axios.get(" https://bankify-ztoj.onrender.com/api/logout", { withCredentials: true });
       navigate("/login");
       // Redirect to the login page
     } catch (error) {
