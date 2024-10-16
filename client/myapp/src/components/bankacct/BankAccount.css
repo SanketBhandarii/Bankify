@@ -1,0 +1,75 @@
+.bank-account-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a202c;
+  }
+  
+  .bank-account-box {
+    background-color: #2d3748;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 20rem;
+  }
+  
+  .bank-account-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .bank-account-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .bank-account-inputs input {
+    padding: 0.7rem 1rem;
+    background-color: #4a5568;
+    color: white;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: border 0.2s;
+    border: 2px solid transparent;
+  }
+  
+  .bank-account-inputs input:focus {
+    border: 2px solid #5a67d8;
+  }
+  
+  .bank-account-inputs input::placeholder {
+    color: whitesmoke;
+    font-size: 15px;
+  }
+  
+  .bank-account-button {
+    background-color: #4c51bf;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 15px;
+    border: none;
+  }
+  
+  .bank-account-button:hover {
+    background-color: #434190;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .success-message {
+    color: rgb(52, 244, 52);
+    margin-top: 10px;
+  }
+  
