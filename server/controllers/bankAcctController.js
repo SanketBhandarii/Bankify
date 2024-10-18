@@ -39,6 +39,10 @@ export const createBankAccount = async (req, res) => {
   }
 
   try {
+    const existingAccount = await BankAccount.findOne({ accountNumber });
+    if (existingAccount) {
+      return res.status(400).json({ msg: "Account number already exists" });
+    }
     const newAccount = await BankAccount.create({
       user: decoded._id,
       ifscCode,
@@ -78,7 +82,6 @@ export const getBankAccounts = async (req, res) => {
 
 export const getAllAccounts = async (req, res) => {
   try {
-    
     const accounts = await BankAccount.find();
     res.json(accounts);
   } catch (error) {
