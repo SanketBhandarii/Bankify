@@ -1,7 +1,7 @@
 <h1 align="">Bankify🏦</h1>
 
 <p align="">
-  A comprehensive banking application for managing accounts and transactions. 💳
+  A comprehensive banking application for managing accounts💳
 </p>
 
 <h2>Features ✨</h2>
